@@ -1,4 +1,4 @@
-package realfractalfun;
+package juliasetexample;
 
 import org.scijava.ui.behaviour.DragBehaviour;
 

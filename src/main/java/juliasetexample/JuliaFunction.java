@@ -1,4 +1,4 @@
-package realfractalfun;
+package juliasetexample;
 
 import net.imglib2.RealInterval;
 import net.imglib2.RealPoint;

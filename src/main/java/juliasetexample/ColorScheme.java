@@ -1,4 +1,4 @@
-package realfractalfun;
+package juliasetexample;
 
 public enum ColorScheme
 {

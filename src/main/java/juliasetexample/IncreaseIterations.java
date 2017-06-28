@@ -1,4 +1,4 @@
-package realfractalfun;
+package juliasetexample;
 
 import java.awt.event.ActionEvent;
 
