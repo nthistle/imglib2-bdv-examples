@@ -51,22 +51,46 @@ public class JuliaFunction extends RealPoint implements RealRandomAccess< Double
 		return new JuliaFunction( this.numIts, this.myRealC, this.myImagC, this.isMandelbrot );
 	}
 
+	/**
+	 * Increments the number of iterations to run on every pixel to determine
+	 * whether it is in the set or not.
+	 * 
+	 * @param dIts
+	 */
 	public void increaseIts( final int dIts )
 	{
 		this.numIts += dIts;
 	}
 
+	/**
+	 * Changes the value of C, the complex constant that defines a given Julia
+	 * Set.
+	 * 
+	 * @param realPart
+	 *            real(c)
+	 * @param imagPart
+	 *            imag(c)
+	 */
 	public void updateC( final double realPart, final double imagPart )
 	{
 		myRealC = realPart;
 		myImagC = imagPart;
 	}
 
+	/**
+	 * Toggles whether to display a Julia Set (defined by current C) or a
+	 * Mandelbrot Set. Bound to the M key.
+	 */
 	public void toggleMandelbrot()
 	{
 		isMandelbrot = !isMandelbrot;
 	}
 
+	/**
+	 * Returns a double type value representing the normalized number of
+	 * iterations it took for the current point to diverge, 0 if it never
+	 * diverged after numIts iterations.
+	 */
 	public synchronized DoubleType get()
 	{
 		double realPart = position[ 0 ] / 100.0;
