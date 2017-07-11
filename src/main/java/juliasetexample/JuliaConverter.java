@@ -20,6 +20,7 @@ public class JuliaConverter implements Converter< DoubleType, ARGBType >
 		myScheme = newScheme;
 	}
 
+	@Override
 	public void convert( DoubleType input, ARGBType output )
 	{
 		double val = input.get();
@@ -36,6 +37,14 @@ public class JuliaConverter implements Converter< DoubleType, ARGBType >
 				output.set( ARGBType.rgba( 255, 255, 255, 255 ) );
 			else
 				output.set( Color.HSBtoRGB( ( float ) ( 0.95f + 2.0f * input.get() ), 0.6f, 1.0f ) );
+
+			break;
+			
+		case DARKRAINBOW:
+			if ( input.get() == 0 )
+				output.set( ARGBType.rgba( 255, 255, 255, 255 ) );
+			else
+				output.set( Color.HSBtoRGB( ( float ) ( 0.95f + 2.0f * input.get() ), 0.7f, (float)(1.0f - input.get()*0.5)) );
 
 			break;
 
